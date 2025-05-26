@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Mystery Begins</title>
+
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Russo+One&display=swap" rel="stylesheet">
+  
+  <!-- Link to your custom CSS file if any -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      font-family: 'Russo One', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Anton', sans-serif;
+    }
+
+    .container {
+      padding: 50px;
+    }
+
+    .glitch-text {
+      font-size: 50px;
+      font-weight: bold;
+      color: #ff1a1a;
+      position: relative;
+      display: inline-block;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+      animation: glitchyScream 1.5s infinite;
+    }
+
+    @keyframes glitchyScream {
+      0% { transform: translate(0) scale(1); }
+      10% { transform: translate(-5px, 0) scale(1.1); }
+      20% { transform: translate(5px, 0) scale(1.1); }
+      30% { transform: translate(0, -5px) scale(1.05); }
+      40% { transform: translate(-5px, -5px) scale(1.1); }
+      50% { transform: translate(5px, -5px) scale(1.1); }
+      60% { transform: translate(-5px, 0) scale(1.05); }
+      70% { transform: translate(5px, 0) scale(1.1); }
+      80% { transform: translate(0, 5px) scale(1.05); }
+      90% { transform: translate(-5px, 5px) scale(1.1); }
+      100% { transform: translate(0) scale(1); }
+    }
+
+    .hidden-message {
+      font-size: 20px;
+      color: #888;
+      font-style: italic;
+      display: none;
+    }
+
+    .hidden-message.show {
+      display: block;
+    }
+
+    .button {
+      background-color: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #333;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to the Mystery</h1>
+    <h2 class="glitch-text">"Are you ready to uncover the truth?"</h2>
+
+    <!-- Start the puzzle here -->
+    <p>You've stumbled upon something dangerous... the path forward is unclear.</p>
+    <button class="button" id="start-button">Start the Journey</button>
+
+    <div class="hidden-message" id="hidden-message">
+      <p><strong>Congratulations! You've found the first clue.</strong></p>
+      <p>It says: "The answer lies beneath the Raven's Eye. Look carefully."</p>
+    </div>
+  </div>
+
+  <script>
+    // Handle button click and reveal hidden clue
+    document.getElementById('start-button').addEventListener('click', function() {
+      document.getElementById('hidden-message').classList.add('show');
+      document.getElementById('start-button').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
